@@ -1,6 +1,6 @@
 // Import necessary dependencies and modules
 import React, { useEffect, useState, useRef } from 'react';
-import { deleteMethod } from "../Django API/delete"; // Import a deleteMethod from a Django API file
+
 import axios from "axios"; // Import Axios for HTTP requests
 
 // Create an empty array for filter values
@@ -150,9 +150,7 @@ const handleLogValues = () => {
       ))}
       
       <button onClick={() => {handleLogValues(); postGet()}}>Submit</button>
-      <button onClick={fetchTodoList}>List</button>
-      <textarea id='delete'></textarea>
-      <button onClick={deleteMethod}>Delete</button>
+      
       <div>
         {todos.map((item) => (
           <div key={item.id}>
@@ -163,9 +161,8 @@ const handleLogValues = () => {
       </div>
       {answer && (
         <div>
-          <h1>ID: {answer.id}</h1>
-          <p>Number: {answer.number}</p>
-          <p>Description: {answer.description}</p>
+          <p>Average value: {answer.number}</p>
+          <p>Stock name: {answer.description}</p>
         </div>
       )}
     </div>

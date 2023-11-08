@@ -6,15 +6,6 @@ stock = []
 
 
 import numpy as np  # Import NumPy for array operations
-
-def calculateCAPM(stockValue, minvalue):
-    minValue = np.array(minvalue)  # Convert minvalue to a NumPy array
-    stockValue = np.array(stockValue)  # Convert stockValue to a NumPy array
-    
-    if np.all(stockValue > minValue):  # Perform element-wise comparison
-        return False
-    else:
-        return True
  
 
 def choose(filter, number):
@@ -26,10 +17,12 @@ def choose(filter, number):
                 new = df[col]
                 new = pd.to_numeric(new, errors='coerce')
                 dfavg = new.sum() / len(new)
-                result = calculateCAPM(dfavg, number)  # Calculate CAPM and store the result
-                if result:  # Check the result (True or False)
-                    stock.append(col)  # Append the column name to stock
-                    print(stock)
+                
+                
+                stock.append(col)  # Append the column name to stock
+                print(stock)
+
+                return stock, dfavg
 
 
         elif filter[i] == "Volatility":

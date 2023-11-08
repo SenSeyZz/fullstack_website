@@ -21,6 +21,7 @@ id = []
 
 # Define a view for deleting data by its ID
 class DeleteDataById(generics.GenericAPIView):
+    #why the fuck do we have 2 delete functions ?? Like here and line 37
     def delete(self, request, pk):
         try:
             # Try to retrieve the item by its ID
@@ -67,15 +68,17 @@ def my_function(sender, request, **kwargs):
     
     # Your logic here
 
-    choose(filter, number)
+    name, average = choose(filter, number)
+    print (name)
+    print (average)
 
     # POST the new numbers to get them back in the front end 
     print("POST request received")
     url = "http://localhost:8000/api/back/"
     data = {
         #stock is calculated in alphavantage_api and imported to get the values back 
-        "number": stock,
-        "description": filter
+        "number": average,
+        "description": name
     }
     response = requests.post(url, data=data)
     number.clear()
