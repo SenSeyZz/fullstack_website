@@ -21,3 +21,6 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = 'django-insecure-)fi&6o&pflho7qu%^q$3&dplp0^1n1-cmwaw_((21$60g17cb6'
